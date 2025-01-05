@@ -8,6 +8,7 @@ public class Main {
         System.out.println("\nFactorial of " + n + " is " + findFactorial(n));
     }
 
+
     public static int findFactorial(int n) {
         if (n == 0) {
             return 1;
