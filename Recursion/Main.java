@@ -12,9 +12,7 @@ public class Main {
         if (n == 0) {
             return 1;
         }
-        int fnm1 = findFactorial(n - 1);
-        int fn = n * fnm1;
-        return fn;
+        return n * findFactorial(n - 1);
     }
 
     public static void printDec(int n) {
