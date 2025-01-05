@@ -2,14 +2,26 @@ package Recursion;
 
 public class Main {
     public static void main(String[] args) {
-        int n = 25;
+        int[] arr = {1, 2, 3, 4, 5};
+        int n = 5;
         printDec(n);
         printAsc(n);
         System.out.println("\nFactorial of " + n + " is " + findFactorial(n));
         System.out.println("Sum of Natural number:" + n + " = " + sumOfNaturalNumber(n));
         System.out.println("Fibonacci of " + n + " is " + fib(n));
+        System.out.println(isSorted(arr, 0));
 
 
+    }
+
+    public static boolean isSorted(int[] arr, int i) {
+        if (i == arr.length - 1) {
+            return true;
+        }
+        if (arr[i] > arr[i + 1]) {
+            return false;
+        }
+        return isSorted(arr, i + 1);
     }
 
     //  sum of N fibonacci series
