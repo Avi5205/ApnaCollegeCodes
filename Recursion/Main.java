@@ -2,7 +2,7 @@ package Recursion;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
+        int[] arr = {1, 2, 3, 4, 5, 7, 9, 5};
         int n = 5;
         printDec(n);
         printAsc(n);
@@ -10,8 +10,29 @@ public class Main {
         System.out.println("Sum of Natural number:" + n + " = " + sumOfNaturalNumber(n));
         System.out.println("Fibonacci of " + n + " is " + fib(n));
         System.out.println(isSorted(arr, 0));
+        System.out.println(findFirstOccurrence(arr, 5, 0));
+        System.out.println(findLastOccurrence(arr, 5, 0));
+    }
 
+    public static int findLastOccurrence(int[] arr, int key, int i) {
+        if (i == arr.length) {
+            return -1;
+        }
+        int isFound = findLastOccurrence(arr, key, i + 1);
+        if (isFound == -1 && arr[i] == key) {
+            return i;
+        }
+        return isFound;
+    }
 
+    public static int findFirstOccurrence(int[] arr, int key, int i) {
+        if (i == arr.length) {
+            return -1;
+        }
+        if (arr[i] == key) {
+            return i;
+        }
+        return findFirstOccurrence(arr, key, i + 1);
     }
 
     public static boolean isSorted(int[] arr, int i) {
